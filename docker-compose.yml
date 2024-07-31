@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+  activemq:
+    image: rmohr/activemq
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+  transaction-processor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: transaction-processor
+    ports:
+      - "8080:8080"
+    links:
+      - mongodb
+      - activemq
+volumes:
+  mongo-data:
+
