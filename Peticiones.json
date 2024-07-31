@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "8cf60c40-7337-4e1e-b6c1-abc75e828eee",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20025501"
+	},
+	"item": [
+		{
+			"name": "obtener registros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/transactions/obtener-registros"
+			},
+			"response": []
+		},
+		{
+			"name": "obtener registros sumarry",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/transactions/obtener-registros-summary"
+			},
+			"response": []
+		},
+		{
+			"name": "registrar transferencia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"transactionId\": \"555\",\r\n  \"timestamp\": \"2024-07-28T14:30:00\",\r\n  \"deviceNumber\": \"67890\",\r\n  \"userId\": \"user1\",\r\n  \"geoPosition\": \"40.712776, -74.005974\",\r\n  \"amount\": 400\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/transactions"
+			},
+			"response": []
+		}
+	]
+}
